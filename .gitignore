@@ -1,0 +1,49 @@
+# Python / Django
+*.pyc
+__pycache__
+*.pyo
+*.pyd
+*.db
+*.sqlite3
+*.log
+env/
+venv/
+*.egg-info/
+*.tox/
+*.nox/
+*.coverage
+*.hypothesis/
+.coverage.*
+*.dist-info/
+*.eggs/
+
+# Node.js / React
+node_modules/
+npm-debug.log
+yarn-error.log
+*.lock
+*.env
+
+# IntelliJ / Kotlin
+.idea/
+*.iml
+out/
+
+# Spring Boot / Maven / Gradle
+*.jar
+*.war
+*.ear
+target/
+build/
+
+# Operating System files
+.DS_Store
+Thumbs.db
+
+# Logs
+logs/
+*.log
+
+# IDE / Editor directories and files
+.vscode/
+*.swp
