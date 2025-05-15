@@ -1,38 +1,104 @@
-.App {
-  text-align: center;
+/* Reset básico */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+/* Estilos generales */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #fff;
+  color: #111;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+/* Navbar */
+.navbar {
+  background-color: #0c5a9e; /* azul Canvas similar */
   color: white;
+  padding: 1rem 2rem;
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  position: sticky;
+  top: 0;
+  z-index: 100;
 }
 
-.App-link {
-  color: #61dafb;
+.navbar h1 {
+  font-size: 1.8rem;
+  font-weight: bold;
+  cursor: pointer;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.navbar ul {
+  list-style: none;
+  display: flex;
+  gap: 1.5rem;
+  margin-left: auto;
+}
+
+.navbar li {
+  cursor: pointer;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.navbar li:hover {
+  text-decoration: underline;
+  color: #d9eaff;
+}
+
+/* Container principal */
+.container {
+  max-width: 900px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+}
+
+/* Titulos */
+h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+}
+
+h2 {
+  font-size: 1.6rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  margin-top: 2rem;
+}
+
+/* Tarjetas para cursos y materiales */
+.card {
+  border: 1px solid #ddd;
+  background-color: #f8f9fa;
+  border-radius: 6px;
+  padding: 1rem 1.5rem;
+  margin-bottom: 1rem;
+  box-shadow: 0 1px 3px rgb(0 0 0 / 0.1);
+  transition: box-shadow 0.3s ease;
+  cursor: default;
+}
+
+.card:hover {
+  box-shadow: 0 4px 12px rgb(0 0 0 / 0.15);
+}
+
+.card strong {
+  font-weight: 700;
+  font-size: 1.1rem;
+}
+
+.card em {
+  font-style: italic;
+  color: #555;
+  margin-left: 5px;
+}
+
+.card p {
+  margin-top: 0.5rem;
+  font-size: 1rem;
+  color: #333;
 }
