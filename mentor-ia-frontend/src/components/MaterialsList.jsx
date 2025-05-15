@@ -7,12 +7,11 @@ const dummyMaterials = [
 ];
 
 const MaterialsList = () => (
-  <section>
-    <h2>Materiales Educativos</h2>
+  <div>
     {dummyMaterials.map((material, i) => (
       <MaterialCard key={i} {...material} />
     ))}
-  </section>
+  </div>
 );
 
 export default MaterialsList;

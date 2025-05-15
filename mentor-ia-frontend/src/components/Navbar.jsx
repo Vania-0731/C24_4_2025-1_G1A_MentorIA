@@ -1,9 +1,9 @@
 import React from 'react';
 
 const Navbar = () => (
-  <nav style={{ background: '#005f99', padding: '10px', color: 'white' }}>
+  <nav className="navbar">
     <h2>MentorIA</h2>
-    <ul style={{ display: 'flex', listStyle: 'none', gap: '15px' }}>
+    <ul>
       <li>Inicio</li>
       <li>Cursos</li>
       <li>Materiales</li>

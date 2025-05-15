@@ -7,12 +7,11 @@ const dummyCourses = [
 ];
 
 const CoursesList = () => (
-  <section>
-    <h2>Cursos disponibles</h2>
+  <div>
     {dummyCourses.map((course, i) => (
       <CourseCard key={i} title={course.title} description={course.description} />
     ))}
-  </section>
+  </div>
 );
 
 export default CoursesList;
