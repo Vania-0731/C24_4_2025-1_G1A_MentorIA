@@ -5,14 +5,16 @@ import MaterialsList from '../components/MaterialsList';
 
 const HomePage = () => {
   return (
-    <div>
+    <>
       <Navbar />
-      <main style={{ padding: '20px' }}>
+      <div className="container">
         <h1>Bienvenido a MentorIA</h1>
+        <h2>Cursos disponibles</h2>
         <CoursesList />
+        <h2>Materiales Educativos</h2>
         <MaterialsList />
-      </main>
-    </div>
+      </div>
+    </>
   );
 };
 
