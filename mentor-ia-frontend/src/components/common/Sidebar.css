@@ -3,6 +3,7 @@
   background-color: #1e293b;
   color: #fff;
   overflow-y: auto;
+  overflow-x: hidden;
   transition: width 0.3s;
   height: calc(100vh - 60px);
   display: flex;
