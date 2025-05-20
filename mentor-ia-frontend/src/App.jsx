@@ -1,5 +1,6 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+
 import Home from './pages/Home';
 import Courses from './pages/Courses';
 import Materials from './pages/Materials';
@@ -19,7 +20,7 @@ function App() {
     <Router>
       <Navbar />
       <Sidebar />
-      <div className="app-content"> {}
+      <div className="app-content">
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/courses" element={<Courses />} />
