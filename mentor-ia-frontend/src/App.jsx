@@ -13,6 +13,8 @@ import Rules from './components/home/Rules';
 import Navbar from './components/common/Navbar';
 import Sidebar from './components/common/Sidebar';
 
+import Course_ModuleList from './pages/Course_ModuleList'; 
+import CreateMaterialForm from './pages/Course_MaterialForm';
 import './App.css';
 
 function App() {
@@ -24,6 +26,8 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/courses" element={<Courses />} />
+          <Route path="/courses/:idCourse/modules/" element={<Course_ModuleList />} />
+          <Route path="/courses/:idCourse/modules/:idModule/materials/new" element={<CreateMaterialForm />} />
           <Route path="/materials" element={<Materials />} />
           <Route path="/tasks" element={<Tasks />} />
           <Route path="/grades" element={<Grades />} />

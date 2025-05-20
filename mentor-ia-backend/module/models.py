@@ -1,15 +1,15 @@
 from django.db import models
 from django.contrib.auth.models import User
-from academic_management.models import Class
+from academic_management.models import Course
 
 class Module(models.Model):
-    class_obj = models.ForeignKey(Class, on_delete=models.CASCADE)
+    course = models.ForeignKey(Course, on_delete=models.CASCADE)  # antes class_obj
 
     def __str__(self):
-        return f"Module of {self.class_obj}"
+        return f"Module of {self.course}"
 
 class Announcement(models.Model):
-    class_obj = models.ForeignKey(Class, on_delete=models.CASCADE)
+    course = models.ForeignKey(Course, on_delete=models.CASCADE)  # antes class_obj
     title = models.CharField(max_length=255)
     content = models.TextField()
     creation_date = models.DateTimeField()

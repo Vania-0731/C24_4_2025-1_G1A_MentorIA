@@ -89,7 +89,7 @@ const CreateMaterialForm = () => {
             </h1>
             <div className="actions">
               <Link
-                to={`/courses/${idCourse}/modules/${idModule}/materials`}
+                to={`/courses/${idCourse}/modules`}
                 className="add-course-btn"
               >
                 ← Volver a materiales

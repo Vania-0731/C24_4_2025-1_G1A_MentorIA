@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from .models import Career, Course, AcademicPeriod, Class, Enrollment
+from .models import Career, Subject, AcademicPeriod, Course, Enrollment
 from django.contrib.auth.models import User
 from authentication.models import Student
 
@@ -9,9 +9,9 @@ class CareerSerializer(serializers.ModelSerializer):
         model = Career
         fields = '__all__'
 
-class CourseSerializer(serializers.ModelSerializer):
+class SubjectSerializer(serializers.ModelSerializer):
     class Meta:
-        model = Course
+        model = Subject
         fields = '__all__'
 
 class AcademicPeriodSerializer(serializers.ModelSerializer):
@@ -19,9 +19,9 @@ class AcademicPeriodSerializer(serializers.ModelSerializer):
         model = AcademicPeriod
         fields = '__all__'
 
-class ClassSerializer(serializers.ModelSerializer):
+class CourseSerializer(serializers.ModelSerializer):
     class Meta:
-        model = Class
+        model = Course
         fields = '__all__'
 
 class EnrollmentSerializer(serializers.ModelSerializer):
@@ -43,17 +43,17 @@ class StudentSerializer(serializers.ModelSerializer):
         model = Student
         fields = '__all__'
 
-class ClassDetailSerializer(serializers.ModelSerializer):
-    course = CourseSerializer()
+class CourseDetailSerializer(serializers.ModelSerializer):
+    subject = SubjectSerializer()  # antes: course
     professor_user = UserSerializer()
 
     class Meta:
-        model = Class
+        model = Course
         fields = '__all__'
 
 class EnrollmentDetailSerializer(serializers.ModelSerializer):
     student = StudentSerializer()
-    class_obj = ClassDetailSerializer()
+    course = CourseDetailSerializer()  # antes: class_obj
     period = AcademicPeriodSerializer()
 
     class Meta:
