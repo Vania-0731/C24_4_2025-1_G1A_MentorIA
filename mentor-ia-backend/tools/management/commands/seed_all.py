@@ -1,14 +1,14 @@
 from django.core.management.base import BaseCommand
-from academic_management.models import Career, Course, AcademicPeriod
+from academic_management.models import Career, Subject, AcademicPeriod
 from datetime import datetime
 
 class Command(BaseCommand):
-    help = 'Seed database with base data (Career, Course, AcademicPeriod)'
+    help = 'Seed database with base data (Career, Subject, AcademicPeriod)'
 
     def handle(self, *args, **kwargs):
         self.stdout.write(self.style.SUCCESS("Seeding base data..."))
 
-        # === Carreras actualizadas ===
+        # === Carreras ===
         careers_data = [
             ('C24', 'Diseño y Desarrollo de Software'),
             ('C20', 'Administración de Redes y Comunicaciones'),
@@ -17,8 +17,8 @@ class Command(BaseCommand):
             Career.objects.get_or_create(code=code, name=name)
         self.stdout.write(self.style.SUCCESS(f"{len(careers_data)} carreras creadas."))
 
-        # === Cursos actualizados ===
-        courses = [
+        # === Materias (Subjects) ===
+        subjects = [
             'Investigación e Innovación Tecnológica',
             'Desarrollo de Aplicaciones Empresariales',
             'Construcción y Pruebas de Software',
@@ -26,11 +26,11 @@ class Command(BaseCommand):
             'Programación en Móviles',
             'Tecnologías Emergentes',
         ]
-        for name in courses:
-            Course.objects.get_or_create(name=name)
-        self.stdout.write(self.style.SUCCESS(f"{len(courses)} cursos creados."))
+        for name in subjects:
+            Subject.objects.get_or_create(name=name)
+        self.stdout.write(self.style.SUCCESS(f"{len(subjects)} materias creadas."))
 
-        # === Periodos desde 2023-1 hasta 2025-1 ===
+        # === Periodos académicos ===
         periods = [
             ('2023 - 1', 2023, 1, '2023-03-01', '2023-07-15'),
             ('2023 - 2', 2023, 2, '2023-08-01', '2023-12-15'),
