@@ -359,7 +359,7 @@
   }
 }
 .materials-btn {
-  background-color: #10b981; /* Verde esmeralda */
+  background-color: #10b981; 
   color: white;
   border: none;
   border-radius: 6px;
@@ -372,5 +372,5 @@
 }
 
 .materials-btn:hover {
-  background-color: #059669; /* Verde más oscuro para hover */
+  background-color: #059669; 
 }
