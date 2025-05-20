@@ -30,7 +30,7 @@ const CreateMaterialForm = () => {
       .catch((err) => console.error(err));
 
     axios
-      .get(`http://127.0.0.1:8000/api/module/modules/${idModule}/`)
+      .get(`http://localhost:8000/api/module/modules/${idModule}/`)
       .then((res) => setModuleName(res.data.name || `#${idModule}`))
       .catch(() => setModuleName(`#${idModule}`));
   }, [idCourse, idModule]);
@@ -46,7 +46,7 @@ const CreateMaterialForm = () => {
         formData.append("file", file);
 
         const uploadRes = await axios.post(
-          "http://localhost:8000/api/materials/upload/", // Ajusta según tu backend
+          "http://localhost:8000/materials/upload/",
           formData,
           {
             headers: {
@@ -59,7 +59,7 @@ const CreateMaterialForm = () => {
         setUrl(fileUrl);
       }
 
-      await axios.post("http://localhost:8000/api/materials/", {
+      await axios.post("http://localhost:8000/api/material/materials/", {
         module: idModule,
         title,
         description,
@@ -68,7 +68,7 @@ const CreateMaterialForm = () => {
         creation_date: creationDate,
       });
 
-      navigate(`/courses/${idCourse}/modules/${idModule}/materials`);
+      navigate(`/courses/${idCourse}/modules/`);
     } catch (error) {
       console.error("Error creando material:", error);
       alert("Hubo un error al crear el material.");
@@ -98,7 +98,6 @@ const CreateMaterialForm = () => {
           </div>
 
           <div className="dashboard-layout">
-            {/* Sidebar izquierdo */}
             <div
               style={{
                 width: "200px",
@@ -148,7 +147,6 @@ const CreateMaterialForm = () => {
               </ul>
             </div>
 
-            {/* Formulario */}
             <div
               style={{
                 flexGrow: 1,
@@ -227,7 +225,6 @@ const CreateMaterialForm = () => {
                   />
                 </label>
 
-                {/* Campo oculto para la URL generada */}
                 <input type="hidden" value={url} />
 
                 <label>
@@ -262,7 +259,6 @@ const CreateMaterialForm = () => {
               </form>
             </div>
 
-            {/* Sidebar lateral derecho */}
             <div className="sidebar-info">
               <PendingTasks />
               <RecentGrades />

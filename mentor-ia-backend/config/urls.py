@@ -17,6 +17,9 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from .views import api_root
+from django.conf import settings
+from django.conf.urls.static import static
+from material.views import UploadMaterialFileView
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -28,4 +31,6 @@ urlpatterns = [
     path('api/assignment/', include('assignment.urls')),
     path('api/assessment/', include('assessment.urls')),
     path('api/forum/', include('forum.urls')),
-]
+
+    path('materials/upload/', UploadMaterialFileView.as_view(), name='upload-material'),
+] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

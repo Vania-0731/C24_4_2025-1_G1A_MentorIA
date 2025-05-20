@@ -47,3 +47,6 @@ logs/
 # IDE / Editor directories and files
 .vscode/
 *.swp
+
+# Media files - materiales subidos
+media/materials/
