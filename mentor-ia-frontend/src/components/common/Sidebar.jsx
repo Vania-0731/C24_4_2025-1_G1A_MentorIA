@@ -6,7 +6,7 @@ const Sidebar = () => {
   return (
     <aside className="sidebar">
       <div className="user-profile-section">
-        <img src="https://via.placeholder.com/60" alt="Perfil de usuario" className="profile-picture" />
+        <img src="/images/perfil.png" alt="Perfil de usuario" className="profile-picture" />
         <h3 className="user-name">Cuenta</h3>
       </div>
       
