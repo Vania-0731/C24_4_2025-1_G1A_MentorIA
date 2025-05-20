@@ -2,14 +2,14 @@ from django.urls import path, include
 from rest_framework.routers import DefaultRouter
 from .views import (
     CareerViewSet, CourseViewSet, AcademicPeriodViewSet,
-    SubjectViewSet, EnrollmentViewSet
+    ClassViewSet, EnrollmentViewSet
 )
 
 router = DefaultRouter()
 router.register(r'careers', CareerViewSet)
-router.register(r'subjects', SubjectViewSet)
-router.register(r'academic-periods', AcademicPeriodViewSet)
 router.register(r'courses', CourseViewSet)
+router.register(r'academic-periods', AcademicPeriodViewSet)
+router.register(r'classes', ClassViewSet)
 router.register(r'enrollments', EnrollmentViewSet)
 
 urlpatterns = [

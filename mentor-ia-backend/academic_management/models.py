@@ -10,7 +10,7 @@ class Career(models.Model):
     def __str__(self):
         return f"{self.code} - {self.name}"
 
-class Subject(models.Model):  # antes Course
+class Course(models.Model):
     name = models.CharField(max_length=255)
 
     def __str__(self):
@@ -26,22 +26,20 @@ class AcademicPeriod(models.Model):
     def __str__(self):
         return self.name
 
-class Course(models.Model):  # antes Class
-    subject = models.ForeignKey(Subject, on_delete=models.CASCADE)  # antes course
+class Class(models.Model):
+    course = models.ForeignKey(Course, on_delete=models.CASCADE)
     professor_user = models.ForeignKey(User, on_delete=models.CASCADE)
 
     def __str__(self):
-        return f"{self.subject.name} - Prof: {self.professor_user.username}"
+        return f"{self.course.name} - Prof: {self.professor_user.username}"
 
 class Enrollment(models.Model):
-    from authentication.models import Student
+    from authentication.models import Student  # Import local para evitar ciclo
     student = models.ForeignKey(Student, on_delete=models.CASCADE)
-    course = models.ForeignKey(Course, on_delete=models.CASCADE)  # antes class_obj
+    class_obj = models.ForeignKey(Class, on_delete=models.CASCADE)
     period = models.ForeignKey(AcademicPeriod, on_delete=models.CASCADE)
     status = models.CharField(max_length=50)
     enrollment_date = models.DateField()
 
     def __str__(self):
-        return f"{self.student.user.username} - {self.course} - {self.period.name}"
-
-    
+        return f"{self.student.user.username} - {self.class_obj} - {self.period.name}"

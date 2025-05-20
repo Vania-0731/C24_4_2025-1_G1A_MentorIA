@@ -1,0 +1,46 @@
+.grades-page {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.content-wrapper {
+  display: flex;
+  flex: 1;
+}
+
+.main-content {
+  flex: 1;
+  padding: 20px;
+  background-color: #f9fafb;
+}
+
+.grades-list {
+  display: grid;
+  gap: 20px;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+}
+
+.grade-card {
+  background: white;
+  padding: 16px;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+}
+
+.grade-status {
+  margin-top: 10px;
+  font-weight: bold;
+}
+
+.excellent {
+  color: green;
+}
+
+.good {
+  color: blue;
+}
+
+.poor {
+  color: red;
+}

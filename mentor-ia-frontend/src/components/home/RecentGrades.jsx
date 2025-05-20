@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import './RecentGrades.css';
 
 const RecentGrades = () => {
@@ -59,7 +60,9 @@ const RecentGrades = () => {
           );
         })}
       </div>
-      <button className="view-all-btn">Ver todas las calificaciones</button>
+      <Link to="/grades" className="view-all-btn">
+        Ver todas las calificaciones
+      </Link>
     </div>
   );
 };

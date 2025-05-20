@@ -1,13 +1,16 @@
 .sidebar {
+  position: fixed;          /* Lo hace fijo */
+  top: 60px;                /* Abajo del navbar de 60px */
+  left: 0;
   width: 86px;
+  height: calc(100vh - 60px);
   background-color: #1e293b;
   color: #fff;
   overflow-y: auto;
-  overflow-x: hidden;
   transition: width 0.3s;
-  height: calc(100vh - 60px);
   display: flex;
   flex-direction: column;
+  z-index: 100;             /* Para que esté sobre el contenido */
 }
 
 .sidebar:hover {
@@ -50,23 +53,44 @@
   display: flex;
   flex-direction: column;
   gap: 8px;
+  padding-left: 0;
+  margin: 0;
+  list-style: none;
 }
 
+/* Quita padding y cursor a li, lo controla el link */
 .sidebar-menu li {
   position: relative;
+}
+
+/* Links que envuelven contenido del li */
+.sidebar-link {
   display: flex;
   align-items: center;
+  gap: 16px;
   padding: 12px 16px;
-  cursor: pointer;
-  transition: background-color 0.2s;
+  color: inherit; /* hereda color blanco */
+  text-decoration: none;
   white-space: nowrap;
+  cursor: pointer;
+  transition: background-color 0.2s, color 0.2s;
+  border-radius: 0 24px 24px 0;
 }
 
-.sidebar-menu li svg {
+/* Hover para links */
+.sidebar-link:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  color: #3b82f6;
+}
+
+/* Icono SVG dentro de links */
+.sidebar-link svg {
   min-width: 24px;
-  margin-right: 16px;
+  height: 24px;
+  stroke: currentColor;
 }
 
+/* Texto solo visible al hacer hover en sidebar */
 .sidebar-menu li span {
   opacity: 0;
   transition: opacity 0.3s;
@@ -76,15 +100,15 @@
   opacity: 1;
 }
 
-.sidebar-menu li:hover {
-  background-color: rgba(255, 255, 255, 0.1);
-}
-
-.sidebar-menu li.active {
+/* Clase activa por NavLink */
+.sidebar-link.active {
   background-color: rgba(59, 130, 246, 0.5);
+  color: white;
+  font-weight: 600;
+  position: relative;
 }
 
-.sidebar-menu li.active::before {
+.sidebar-link.active::before {
   content: '';
   position: absolute;
   left: 0;
@@ -92,8 +116,10 @@
   height: 100%;
   width: 4px;
   background-color: #3b82f6;
+  border-radius: 0 4px 4px 0;
 }
 
+/* Badge para notificaciones */
 .badge {
   background-color: #ef4444;
   color: white;
