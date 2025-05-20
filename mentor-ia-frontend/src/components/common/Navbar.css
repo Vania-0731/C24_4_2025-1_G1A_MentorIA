@@ -1,0 +1,118 @@
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 16px;
+  background-color: #1e1e1e;
+  color: #ffffff;
+  height: 60px;
+  border-bottom: 1px solid #333;
+}
+
+.navbar-left, .navbar-right {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.navbar-center {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.back-button, .refresh-button, .icon-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background-color: transparent;
+  color: #ffffff;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.back-button:hover, .refresh-button:hover, .icon-button:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.url-bar {
+  display: flex;
+  align-items: center;
+  background-color: #2d2d2d;
+  padding: 6px 12px;
+  border-radius: 24px;
+  width: 400px;
+  justify-content: center;
+}
+
+.lock-icon {
+  margin-right: 8px;
+  font-size: 14px;
+}
+
+.url {
+  font-size: 14px;
+  color: #e0e0e0;
+}
+
+.user-profile {
+  position: relative;
+  cursor: pointer;
+}
+
+.profile-image {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.profile-dropdown {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  margin-top: 8px;
+  background-color: #2d2d2d;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  width: 180px;
+  z-index: 100;
+}
+
+.profile-dropdown ul {
+  padding: 8px 0;
+}
+
+.profile-dropdown li {
+  padding: 12px 16px;
+  transition: background-color 0.2s;
+  cursor: pointer;
+}
+
+.profile-dropdown li:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.notification-button {
+  position: relative;
+}
+
+.notification-badge {
+  position: absolute;
+  top: 2px;
+  right: 2px;
+  background-color: #ef4444;
+  color: white;
+  font-size: 10px;
+  min-width: 16px;
+  height: 16px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+}
