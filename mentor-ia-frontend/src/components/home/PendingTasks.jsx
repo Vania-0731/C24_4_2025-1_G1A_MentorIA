@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import './PendingTasks.css';
 
 const PendingTasks = () => {
@@ -49,7 +50,7 @@ const PendingTasks = () => {
           </div>
         ))}
       </div>
-      <button className="view-all-btn">Ver todas las tareas</button>
+      <Link to="/tasks" className="view-all-btn">Ver todas las tareas</Link>
     </div>
   );
 };
