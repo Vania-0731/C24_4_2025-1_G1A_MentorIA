@@ -1,0 +1,108 @@
+.sidebar {
+  width: 86px;
+  background-color: #1e293b;
+  color: #fff;
+  overflow-y: auto;
+  transition: width 0.3s;
+  height: calc(100vh - 60px);
+  display: flex;
+  flex-direction: column;
+}
+
+.sidebar:hover {
+  width: 220px;
+}
+
+.user-profile-section {
+  padding: 16px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.profile-picture {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  margin-bottom: 8px;
+}
+
+.user-name {
+  font-size: 14px;
+  font-weight: 500;
+  white-space: nowrap;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.sidebar:hover .user-name {
+  opacity: 1;
+}
+
+.sidebar-menu {
+  flex: 1;
+  padding: 16px 0;
+}
+
+.sidebar-menu ul {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.sidebar-menu li {
+  position: relative;
+  display: flex;
+  align-items: center;
+  padding: 12px 16px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  white-space: nowrap;
+}
+
+.sidebar-menu li svg {
+  min-width: 24px;
+  margin-right: 16px;
+}
+
+.sidebar-menu li span {
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.sidebar:hover .sidebar-menu li span {
+  opacity: 1;
+}
+
+.sidebar-menu li:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.sidebar-menu li.active {
+  background-color: rgba(59, 130, 246, 0.5);
+}
+
+.sidebar-menu li.active::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 4px;
+  background-color: #3b82f6;
+}
+
+.badge {
+  background-color: #ef4444;
+  color: white;
+  font-size: 10px;
+  min-width: 18px;
+  height: 18px;
+  border-radius: 9px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: auto;
+  font-weight: bold;
+}
