@@ -1,0 +1,376 @@
+.courses-page {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.content-wrapper {
+  display: flex;
+  flex: 1;
+}
+
+.main-content {
+  flex: 1;
+  padding: 20px;
+  overflow-y: auto;
+  background-color: #f9fafb;
+}
+
+.courses-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.courses-header h1 {
+  font-size: 24px;
+  font-weight: 600;
+  color: #111827;
+}
+
+.search-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.search-input {
+  padding: 8px 16px;
+  padding-right: 40px;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  width: 250px;
+}
+
+.search-btn {
+  position: absolute;
+  right: 8px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.courses-tabs {
+  display: flex;
+  align-items: center;
+  margin-bottom: 24px;
+  border-bottom: 1px solid #e5e7eb;
+  padding-bottom: 10px;
+}
+
+.tab-btn {
+  background: none;
+  border: none;
+  padding: 8px 16px;
+  margin-right: 8px;
+  font-size: 14px;
+  font-weight: 500;
+  color: #6b7280;
+  cursor: pointer;
+  border-radius: 8px;
+  transition: all 0.2s;
+}
+
+.tab-btn:hover {
+  color: #111827;
+  background-color: #f3f4f6;
+}
+
+.tab-btn.active {
+  color: #3b82f6;
+  background-color: rgba(59, 130, 246, 0.1);
+  font-weight: 600;
+}
+
+.view-toggle {
+  margin-left: auto;
+  display: flex;
+  gap: 8px;
+}
+
+.toggle-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 8px;
+  border: 1px solid #e5e7eb;
+  background-color: white;
+  color: #6b7280;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.toggle-btn:hover {
+  color: #111827;
+  border-color: #d1d5db;
+}
+
+.toggle-btn.active {
+  color: white;
+  background-color: #3b82f6;
+  border-color: #3b82f6;
+}
+
+.courses-container {
+  padding: 10px 0;
+}
+
+.courses-container.grid-view {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 24px;
+}
+
+.courses-container.list-view {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.courses-container.list-view .course-card {
+  display: flex;
+  flex-direction: row;
+  height: auto;
+}
+
+.courses-container.list-view .course-image {
+  width: 200px;
+  min-width: 200px;
+  height: auto;
+}
+
+.courses-container.list-view .course-info {
+  display: flex;
+  flex-direction: column;
+  padding: 16px;
+  flex: 1;
+}
+
+.course-card {
+  background-color: white;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s, box-shadow 0.3s;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  border-top: 4px solid;
+}
+
+.course-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+}
+
+.course-image {
+  height: 140px;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+}
+
+.favorite-button {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background-color: rgba(255, 255, 255, 0.8);
+  border: none;
+  border-radius: 50%;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  cursor: pointer;
+  color: #9ca3af;
+  transition: all 0.2s;
+}
+
+.favorite-button:hover {
+  background-color: white;
+  color: #f59e0b;
+}
+
+.course-info {
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.course-period {
+  font-size: 12px;
+  color: #6b7280;
+  margin-bottom: 8px;
+}
+
+.course-title {
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 8px;
+  color: #1f2937;
+}
+
+.course-code {
+  font-size: 12px;
+  color: #4b5563;
+  margin-bottom: 16px;
+}
+
+.course-details {
+  margin-bottom: 16px;
+}
+
+.detail-item {
+  display: flex;
+  margin-bottom: 8px;
+}
+
+.detail-label {
+  font-size: 12px;
+  color: #6b7280;
+  width: 80px;
+  flex-shrink: 0;
+}
+
+.detail-value {
+  font-size: 12px;
+  color: #1f2937;
+}
+
+.course-footer {
+  margin-top: auto;
+}
+
+.course-progress {
+  margin-bottom: 12px;
+}
+
+.progress-bar {
+  height: 6px;
+  background-color: #e5e7eb;
+  border-radius: 3px;
+  overflow: hidden;
+}
+
+.progress-value {
+  height: 100%;
+  background-color: #3b82f6;
+}
+
+.progress-text {
+  display: block;
+  font-size: 12px;
+  color: #6b7280;
+  margin-top: 4px;
+}
+
+.course-action {
+  background-color: #3b82f6;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  padding: 8px 16px;
+  font-size: 14px;
+  font-weight: 500;
+  width: 100%;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.course-action:hover {
+  background-color: #2563eb;
+}
+
+.no-courses {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 48px 0;
+  text-align: center;
+}
+
+.no-courses svg {
+  margin-bottom: 16px;
+}
+
+.no-courses p {
+  font-size: 16px;
+  color: #6b7280;
+  margin-bottom: 16px;
+}
+
+.reset-btn {
+  background-color: #3b82f6;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  padding: 8px 16px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.reset-btn:hover {
+  background-color: #2563eb;
+}
+
+@media (max-width: 768px) {
+  .courses-container.grid-view {
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: 16px;
+  }
+  
+  .courses-container.list-view .course-card {
+    flex-direction: column;
+    height: auto;
+  }
+  
+  .courses-container.list-view .course-image {
+    width: 100%;
+    height: 140px;
+  }
+  
+  .courses-tabs {
+    overflow-x: auto;
+    white-space: nowrap;
+    padding-bottom: 16px;
+  }
+  
+  .courses-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+  }
+  
+  .search-container {
+    width: 100%;
+  }
+  
+  .search-input {
+    width: 100%;
+  }
+}
+.materials-btn {
+  background-color: #10b981; /* Verde esmeralda */
+  color: white;
+  border: none;
+  border-radius: 6px;
+  padding: 8px 16px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  margin-left: 10px;
+  transition: background-color 0.2s ease;
+}
+
+.materials-btn:hover {
+  background-color: #059669; /* Verde más oscuro para hover */
+}
